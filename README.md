@@ -1,4 +1,4 @@
-# anaGraph
+# anaGraph()
 * jQuery Plugin for Anagraph / Anaglyph effect
 * 3D effect by Red/Cyan glassis
 * Easy to use : Just put Selector on API <br> $("div").anaGraph();
