@@ -4,7 +4,7 @@
 		
 		// Default Parameters
 		var defs = {
-			Effect3D: '24px'
+			Depth3D: '24px'
 		};
 		var config = $.extend({}, defs, params);
 		
@@ -104,15 +104,14 @@
 			// Mapping R Dimension and BG Dimension
 		
 			var wrapperHeight = $(".anaGraph-bg").css("height");
-			var wrapperWidth = (parseInt($(".anaGraph-bg").css("width"),10) + parseInt(config.Effect3D,10)) + "px";
-			alert(wrapperWidth);
+			var wrapperWidth = (parseInt($(".anaGraph-bg").css("width"),10) + parseInt(config.Depth3D,10)) + "px";
 
 			$(".anaGraph-wrapper").css({'height':wrapperHeight, 'width':wrapperWidth, 'position':'relative'});
 			$(".anaGraph-bg").css({'position':'absolute'});
 			$(".anaGraph-r").css({'position':'absolute'});
 
 			$('.anaGraph-r').css({"top":'0px',"left":'0px',"opacity":'0.5'});
-			$('.anaGraph-bg').css({"top":'0px',"left":config.Effect3D,"opacity":'1'});		
+			$('.anaGraph-bg').css({"top":'0px',"left":config.Depth3D,"opacity":'1'});		
 
 		// thisを返す
         return this;
