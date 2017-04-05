@@ -16,11 +16,12 @@
 			var src = 'url(./' + $(this).attr('src') + ')';
 			var width = $(this).css('width');
 			var height = $(this).css('height');
+			var margin = $(this).css('margin');
 			$(this).parent().css("background-image",src);
 			$(this).parent().css("background-size","cover");
 			$(this).parent().css("width",width);
 			$(this).parent().css("height",height);
-				
+			$(this).parent().css("margin",margin);	
 			$(this).css("display","none");
 		});
 						
