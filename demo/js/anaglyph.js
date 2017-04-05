@@ -8,8 +8,8 @@ $(window).load(function(){
 //			toggle Switch
 			$('p.switch-text').text("3D");
 
-			// anaGraph Plugin Demo - Depth:36px
-			$('main').anaGlyph({Depth3D:'36px'});
+			// anaGraph Plugin Demo
+			$('main').anaGlyph();
 		} else {
 //			alert("2Dになります。");
 			location.reload();
