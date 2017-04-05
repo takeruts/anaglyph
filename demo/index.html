@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang= "ja">
+<head>
+  <meta charset="UTF-8">
+  <title>Anaglyph demo</title>
+  <meta name="keywords" content="Anaglyph 3D">
+  <meta name="description" content="jQuery Plug-in for Anaglyph 3D">
+  <meta name="author" content="Takeru Tsuchiya">
+  <meta name="copyright" content="Takeru Tsuchiya">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="css/base.css" rel="stylesheet">
+  <link href="css/style.css" rel="stylesheet">
+</head>
+
+<body>
+   <header>
+	   <h1>Anagraph  Anaglyph Demo</h1>
+    <label class="switch">
+    	<input type="checkbox" id="2d3dswitch">
+    	<div class="checkbox-slider round"></div>
+    	<p class="switch-text">2D</p>
+    </label>    
+  </header>
+	
+  <main>
+    <wrapper>
+	  <p class="text1">Text1 - Anaglyph</p>
+	  <p class="text2">Text2 - Anaglyph</p>
+	  <img class="image" alt="Night City" src="images/nightCity.jpeg">
+	  <img class="image" alt="Drone" src="images/drone.jpeg" height="400">
+    </wrapper>
+  </main>
+ 
+  <script type="text/javascript" src="js/jquery-1.11.3.min.js"></script>
+  <script type="text/javascript" src="js/anaglyph.js"></script>
+  <script type="text/javascript" src="js/anaglyph_plugin.js"></script>
+
+</body>
+</html>
