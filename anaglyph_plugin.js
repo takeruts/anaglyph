@@ -31,24 +31,24 @@
 		// anaGlyph Left Eyes (Red)
 		$('.anaGlyph-r *').each(function(){
 				
-				var bgImage = $(this).css("background-image");
-				if (bgImage !== 'none'){
+				if ($(this).css("background-image") !== 'none'){
 					// Use backgtound-blend-mode with setting R channel filter 
 					$(this).css({'background-color':'rgba(255,0,0,1)','background-blend-mode': 'lighten'});
-				}
+				} else {
 
-				// No Background Imange -> need to calculate RGB (R:+255, G:+0, B:+0)
-				if ($(this).attr("background-color")){
-					var bgColor = $(this).css("background-color");
-					bgColor = bgColor.replace("rgba(","");
-					bgColor = bgColor.replace("rgb(","");
-					bgColor = bgColor.replace(")","");
-					bgColor = bgColor.split(",");
-					bgColor[0] = Math.min(255, parseInt(bgColor[0]) + 255);
-					bgColor[1] = Math.min(255, parseInt(bgColor[1]) + 0);
-					bgColor[2] = Math.min(255, parseInt(bgColor[2]) + 0);
-					var bgColorVal = "rgba(" + bgColor[0] + "," + bgColor[1] + "," + bgColor[2] + ",1)";
-					$(this).css({'background-color':bgColorVal});
+					// No Background Imange -> need to calculate RGB (R:+255, G:+0, B:+0)
+					if ($(this).css("background-color") !== 'rgba(0, 0, 0, 0)'){
+						var bgColor = $(this).css("background-color");
+						bgColor = bgColor.replace("rgba(","");
+						bgColor = bgColor.replace("rgb(","");
+						bgColor = bgColor.replace(")","");
+						bgColor = bgColor.split(",");
+						bgColor[0] = Math.min(255, parseInt(bgColor[0]) + 255);
+						bgColor[1] = Math.min(255, parseInt(bgColor[1]) + 0);
+						bgColor[2] = Math.min(255, parseInt(bgColor[2]) + 0);
+						var bgColorVal = "rgba(" + bgColor[0] + "," + bgColor[1] + "," + bgColor[2] + ",1)";
+						$(this).css({'background-color':bgColorVal});
+					}
 				}
 			
 				// Font Color Change
@@ -67,23 +67,23 @@
 			// anaGlyph Right Eyes (Green/Blue)
 			$('.anaGlyph-bg *').each(function(){
 					
-				var bgImage = $(this).css("background-image");
-				if (bgImage !== 'none'){ // Use backgtound-blend-mode with setting BG channel filter 
+				if ($(this).css("background-image") !== 'none'){ // Use backgtound-blend-mode with setting BG channel filter 
 					$(this).css({'background-color':'rgba(0,255,255,1)','background-blend-mode': 'lighten'});
-				}
+				} else {
 				
-				// No Background Imange -> need to calculate RGB (R:+0, G:+255, B:+255)
-				if ($(this).attr("background-color")){
-					var bgColor = $(this).css("background-color");
-					bgColor = bgColor.replace("rgba(","");
-					bgColor = bgColor.replace("rgb(","");
-					bgColor = bgColor.replace(")","");
-					bgColor = bgColor.split(",");
-					bgColor[0] = Math.min(255, parseInt(bgColor[0]) + 0);
-					bgColor[1] = Math.min(255, parseInt(bgColor[1]) + 255);
-					bgColor[2] = Math.min(255, parseInt(bgColor[2]) + 255);
-					var bgColorVal = "rgba(" + bgColor[0] + "," + bgColor[1] + "," + bgColor[2] + ",1)";
-					$(this).css({'background-color':bgColorVal});
+					// No Background Imange -> need to calculate RGB (R:+0, G:+255, B:+255)
+					if ($(this).css("background-color") !== 'rgba(0, 0, 0, 0)'){
+						var bgColor = $(this).css("background-color");
+						bgColor = bgColor.replace("rgba(","");
+						bgColor = bgColor.replace("rgb(","");
+						bgColor = bgColor.replace(")","");
+						bgColor = bgColor.split(",");
+						bgColor[0] = Math.min(255, parseInt(bgColor[0]) + 0);
+						bgColor[1] = Math.min(255, parseInt(bgColor[1]) + 255);
+						bgColor[2] = Math.min(255, parseInt(bgColor[2]) + 255);
+						var bgColorVal = "rgba(" + bgColor[0] + "," + bgColor[1] + "," + bgColor[2] + ",1)";
+						$(this).css({'background-color':bgColorVal});
+					}
 				}
 				
 				// Font Color Change
