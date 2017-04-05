@@ -111,7 +111,7 @@
 			$(".anaGlyph-bg").css({'position':'absolute'});
 			$(".anaGlyph-r").css({'position':'absolute'});
 
-			$('.anaGlyph-r').css({"top":'0px',"left":'0px',"opacity":'0.5'});
+			$('.anaGlyph-r').css({"top":'0px',"left":'0px',"opacity":'0.25'});
 			$('.anaGlyph-bg').css({"top":'0px',"left":config.Depth3D,"opacity":'1'});		
 
 		// thisを返す
