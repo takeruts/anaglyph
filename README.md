@@ -37,5 +37,5 @@ __$("div").anaGraph({Depth3D:36px});__
 
 ## Demo
 
-[Demo](takwd.com/anagraph/demo)
+[Demo](http://takwd.com/anagraph/demo)
 
