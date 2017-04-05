@@ -35,7 +35,5 @@ __$("div").anaGlyph({Depth3D:36px});__
     </body>
     </html>
 
-## Demo
-
-[Demo](http://takwd.com/anaglyph/demo)
+## [Demo Page](http://takwd.com/anaglyph/demo)
 
