@@ -1,6 +1,6 @@
 # anaGlyph()
 * jQuery Plugin for Anaglyph effect
-* 3D effect by Red/Cyan glassis
+* 3D effect by Red/Cyan Anaglyph glasses
 * Easy to use : Just put Selector on API  
 
 * アナグリフ（赤青メガネで見る立体画像）に変換するjQuery用のプラグイン。
