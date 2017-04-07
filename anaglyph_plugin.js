@@ -29,77 +29,9 @@
 		$(".anaGlyph-bg").clone().insertAfter(".anaGlyph-bg").addClass('anaGlyph-r').removeClass('anaGlyph-bg');
 		
 		// anaGlyph Left Eyes (Red)
-		$('.anaGlyph-r *').each(function(){
-				
-				if ($(this).css("background-image") !== 'none'){
-					// Use backgtound-blend-mode with setting R channel filter 
-					$(this).css({'background-color':'rgba(255,0,0,1)','background-blend-mode': 'lighten'});
-				} else {
-
-					// No Background Imange -> need to calculate RGB (R:+255, G:+0, B:+0)
-					if ($(this).css("background-color") !== 'rgba(0, 0, 0, 0)'){
-						var bgColor = $(this).css("background-color");
-						bgColor = bgColor.replace("rgba(","");
-						bgColor = bgColor.replace("rgb(","");
-						bgColor = bgColor.replace(")","");
-						bgColor = bgColor.split(",");
-						bgColor[0] = Math.min(255, parseInt(bgColor[0]) + 255);
-						bgColor[1] = Math.min(255, parseInt(bgColor[1]) + 0);
-						bgColor[2] = Math.min(255, parseInt(bgColor[2]) + 0);
-						var bgColorVal = "rgba(" + bgColor[0] + "," + bgColor[1] + "," + bgColor[2] + ",1)";
-						$(this).css({'background-color':bgColorVal});
-					}
-				}
-			
-				// Font Color Change
-				var fontColor = $(this).css("color");
-				fontColor = fontColor.replace("rgba(","");
-				fontColor = fontColor.replace("rgb(","");
-				fontColor = fontColor.replace(")","");
-				fontColor = fontColor.split(",");
-				fontColor[0] = Math.min(255, parseInt(fontColor[0]) + 255);
-				fontColor[1] = Math.min(255, parseInt(fontColor[1]) + 0);
-				fontColor[2] = Math.min(255, parseInt(fontColor[2]) + 0);
-				var fontColorVal = "rgba(" + fontColor[0] + "," + fontColor[1] + "," + fontColor[2] + ",1)";
-				$(this).css({'color':fontColorVal});
-			});
-			
-			// anaGlyph Right Eyes (Green/Blue)
-			$('.anaGlyph-bg *').each(function(){
-					
-				if ($(this).css("background-image") !== 'none'){ // Use backgtound-blend-mode with setting BG channel filter 
-					$(this).css({'background-color':'rgba(0,255,255,1)','background-blend-mode': 'lighten'});
-				} else {
-				
-					// No Background Imange -> need to calculate RGB (R:+0, G:+255, B:+255)
-					if ($(this).css("background-color") !== 'rgba(0, 0, 0, 0)'){
-						var bgColor = $(this).css("background-color");
-						bgColor = bgColor.replace("rgba(","");
-						bgColor = bgColor.replace("rgb(","");
-						bgColor = bgColor.replace(")","");
-						bgColor = bgColor.split(",");
-						bgColor[0] = Math.min(255, parseInt(bgColor[0]) + 0);
-						bgColor[1] = Math.min(255, parseInt(bgColor[1]) + 255);
-						bgColor[2] = Math.min(255, parseInt(bgColor[2]) + 255);
-						var bgColorVal = "rgba(" + bgColor[0] + "," + bgColor[1] + "," + bgColor[2] + ",1)";
-						$(this).css({'background-color':bgColorVal});
-					}
-				}
-				
-				// Font Color Change
-				var fontColor = $(this).css("color");
-				fontColor = fontColor.replace("rgba(","");
-				fontColor = fontColor.replace("rgb(","");
-				fontColor = fontColor.replace(")","");
-				fontColor = fontColor.split(",");
-				fontColor[0] = Math.min(255, parseInt(fontColor[0]) + 0);
-				fontColor[1] = Math.min(255, parseInt(fontColor[1]) + 255);
-				fontColor[2] = Math.min(255, parseInt(fontColor[2]) + 255);
-				var fontColorVal = "rgba(" + fontColor[0] + "," + fontColor[1] + "," + fontColor[2] + ",1)";
-				$(this).css({'color':fontColorVal});
-				
-				$(this).css({'border-color':'transparent'});
-			});
+		$('.anaGlyph-r *').each(function(){changeRgba($(this), 255, 0, 0);});
+		// anaGlyph Right Eyes (Cyan)
+		$('.anaGlyph-bg *').each(function(){changeRgba($(this), 0, 255, 255);});
 		
 			// Layout
 			// Mapping R Dimension and BG Dimension
@@ -119,3 +51,38 @@
     };
 })( jQuery );
 
+function changeRgba($selector, $red, $green, $blue) {
+				
+				$rgba = "rgba(" + $red + "," + $green + "," + $blue + ",1)";
+
+				if ($selector.css("background-image") !== 'none'){
+					// Use backgtound-blend-mode with setting R channel filter
+					$selector.css({'background-color':$rgba,'background-blend-mode': 'lighten'});
+				} else {
+					// No Background Imange -> need to calculate RGB (R:+255, G:+0, B:+0)
+					if ($selector.css("background-color") !== 'rgba(0, 0, 0, 0)'){
+						var bgColor = $selector.css("background-color");
+						bgColor = bgColor.replace("rgba(","");
+						bgColor = bgColor.replace("rgb(","");
+						bgColor = bgColor.replace(")","");
+						bgColor = bgColor.split(",");
+						bgColor[0] = Math.min(255, parseInt(bgColor[0]) + $red);
+						bgColor[1] = Math.min(255, parseInt(bgColor[1]) + $green);
+						bgColor[2] = Math.min(255, parseInt(bgColor[2]) + $blue);
+						var bgColorVal = "rgba(" + bgColor[0] + "," + bgColor[1] + "," + bgColor[2] + ",1)";
+						$selector.css({'background-color':bgColorVal});
+					}
+				}
+			
+				// Font Color Change
+				var fontColor = $selector.css("color");
+				fontColor = fontColor.replace("rgba(","");
+				fontColor = fontColor.replace("rgb(","");
+				fontColor = fontColor.replace(")","");
+				fontColor = fontColor.split(",");
+				fontColor[0] = Math.min(255, parseInt(fontColor[0]) + $red);
+				fontColor[1] = Math.min(255, parseInt(fontColor[1]) + $green);
+				fontColor[2] = Math.min(255, parseInt(fontColor[2]) + $blue);
+				var fontColorVal = "rgba(" + fontColor[0] + "," + fontColor[1] + "," + fontColor[2] + ",1)";
+				$selector.css({'color':fontColorVal});
+}
