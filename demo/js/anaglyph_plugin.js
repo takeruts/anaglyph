@@ -4,7 +4,7 @@
 		
 		// Default Parameters
 		var defs = {
-			Depth3D: '24px'
+			Depth3D: '12px'
 		};
 		var config = $.extend({}, defs, params);
 		
