@@ -11,7 +11,7 @@
 __$("div").anaGlyph();__
 
 * You can scale 3D effect with Depth3D parameter by (px).  Default set to 24px. Negative Number will result Dent 3D effect.
-* 立体を大きくしたい場合は、Depth3Dで指定1。デフォルトは、12px　。マイナスの数字で、凹んだ立体画像になる。
+* 立体を大きくしたい場合は、Depth3Dで指定。デフォルトは、12px　。マイナスの数字で、凹んだ立体画像になる。
 
 __$("div").anaGlyph({Depth3D:36px});__
 
